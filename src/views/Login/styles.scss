@@ -1,0 +1,23 @@
+.login-screen {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: flex-start;
+
+  .login-screen__form {
+    width: 380px;
+    display: grid;
+    justify-self: center;
+    row-gap: 2.5em;
+  }
+
+  .login-screen__form-title {
+    display: grid;
+    row-gap: .5em;
+  }
+
+  .login-screen__form-content {
+    display: grid;
+    row-gap: .8em;
+  }
+
+}

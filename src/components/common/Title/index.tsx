@@ -1,8 +1,12 @@
 import { FC } from "react";
 import "./styles.scss";
 
-const Title : FC = ({ children }) => (
-  <span className="title">
+type TProps = {
+  size? : string | number;
+}
+
+const Title : FC<TProps> = ({ children, size }) => (
+  <span style={{ fontSize : size }} className="title">
     {children}
   </span>
 );

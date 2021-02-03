@@ -1,13 +1,15 @@
 .insurance-information {
-  width: 550px;
+  width: 500px;
   height: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 
   .insurance-information__text {
-    width: 420px;
+    width: auto;
     height: 80%;
+    padding-right: 2em;
+    box-sizing: border-box;
     display: grid;
     align-items: center;
     position: relative;
