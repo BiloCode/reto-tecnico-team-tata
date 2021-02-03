@@ -4,12 +4,13 @@ import "./styles.scss";
 
 type TProps = {
   text : string;
+  inputName : string;
   link? : string;
 }
 
 const PoliticCheckbox = forwardRef<HTMLInputElement, TProps>((props, ref) => (
-  <label className="politic-checkbox">
-    <input ref={ref} type="checkbox" required className="politic-checkbox__input" />
+  <label htmlFor={props.inputName} className="politic-checkbox">
+    <input ref={ref} id={props.inputName} type="checkbox" className="politic-checkbox__input" />
     <div className="politic-checkbox__box">
       <div className="politic-checkbox__icon">
         <BsCheck />

@@ -1,5 +1,4 @@
 .button {
-  width: 200px;
   min-width: 180px;
   outline: none;
   padding: 1em;
@@ -16,7 +15,7 @@
     color: #fff;
   }
 
-  &--ghost {
+  &.button--ghost {
     background-color: var(--color-common);
     color: var(--color-text-light);
   }

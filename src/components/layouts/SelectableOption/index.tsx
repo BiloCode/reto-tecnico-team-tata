@@ -1,26 +1,25 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import "./styles.scss";
 
 import RadioInput from "components/common/RadioInput";
 
-const options = [
-  {
-    id : 0,
-    text : "Option 1"
-  },
-  {
-    id : 1,
-    text : "Option 2"
-  }
-]
+type TSelectableOption = {
+  id : number;
+  text : string;
+}
 
-const SelectableOption = () => {
+type TProps = {
+  title : string;
+  options : TSelectableOption[];
+}
+
+const SelectableOption : FC<TProps> = ({ title , options }) => {
   const [ optionActive , setOptionActive ] = useState<number>(-1);
 
   const ClickRadioInput = (id : number) => () => setOptionActive(() => id);
 
   return <div className="selectable-options">
-    <span className="selectable-options__title">¿A quien vamos a asegurar?</span>
+    <span className="selectable-options__title">{title}</span>
     <div className="selectable-options__options">
       {
         options.map((v) => (

@@ -7,12 +7,13 @@ type TProps = {
   title : string;
   price : number;
   select? : boolean;
+  onClick?() : void;
 }
 
-const PlanCard : FC<TProps> = ({ title , price, select }) => {
+const PlanCard : FC<TProps> = ({ title , price, select , onClick }) => {
   const plan_card = classnames("plan-card",{ "plan-card--select" : select });
 
-  return <div className={plan_card}>
+  return <div className={plan_card} onClick={onClick}>
     <span className="plan-card__title">{title}</span>
     <div className="plan-card__price">
       <span className="plan-card__price_symbol">S/</span>

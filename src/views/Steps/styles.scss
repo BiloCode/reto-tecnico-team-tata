@@ -1,0 +1,12 @@
+.steps-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__content {
+    width: 550px;
+    display: grid;
+    overflow-x: hidden;
+  }
+}

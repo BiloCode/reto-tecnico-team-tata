@@ -1,5 +1,5 @@
 .plan-card {
-  width: 120px;
+  min-width: 120px;
   border: 2px solid var(--color-common);
   display: grid;
   justify-items: center;
@@ -42,20 +42,20 @@
     font-weight: 300;
   }
 
-  &--select {
+  &.plan-card--select {
     position: relative;
     border-color: var(--color-secondary);
+  }
+
+  &__indicator{
+    display: block;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+  }
   
-    &__indicator{
-      display: block;
-      position: absolute;
-      top: 6px;
-      right: 6px;
-    }
-    
-    &__indicator_image {
-      width: 18px;
-      height: 18px;
-    }
+  &__indicator_image {
+    width: 18px;
+    height: 18px;
   }
 }

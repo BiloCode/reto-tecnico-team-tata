@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { FormEvent, useRef } from "react";
 
 export default () => {
   const protection_politics = useRef<HTMLInputElement>(null);
@@ -7,11 +7,18 @@ export default () => {
   const birthday = useRef<HTMLInputElement>(null);
   const phone = useRef<HTMLInputElement>(null);
 
+  const onSubmit = (ev : FormEvent) => {
+    ev.preventDefault();
+  }
+
   return {
-    protection_politics,
-    comunication_politics,
-    birthday,
-    identificator,
-    phone
+    refs : {
+      protection_politics,
+      comunication_politics,
+      birthday,
+      identificator,
+      phone
+    },
+    onSubmit
   }
 }

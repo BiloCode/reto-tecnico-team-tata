@@ -6,11 +6,12 @@ import Background from "components/common/Background";
 import Title from "components/common/Title";
 import Description from "components/common/Description";
 import Button from "components/common/Button";
+import RootLayout from "components/layouts/RootLayout";
 
 const Thanks : FC<RouteComponentProps> = () => (
-  <div className="thanks-screen">
+  <RootLayout>
     <Background />
-    <div className="thanks-screen__content">
+    <div className="thanks-screen">
       <div className="thanks-screen__text">
         <div className="thanks-screen__text-container">
           <Title>
@@ -26,7 +27,7 @@ const Thanks : FC<RouteComponentProps> = () => (
         </div>
       </div>
     </div>
-  </div>
+  </RootLayout>
 );
 
 export default Thanks;

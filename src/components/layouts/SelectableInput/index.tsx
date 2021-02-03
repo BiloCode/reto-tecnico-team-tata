@@ -62,7 +62,7 @@ const SelectableInput : FC<TProps> = ({ reference }) => {
         )
       }
     </div>
-    <TextInput ref={reference} type="text" placeholder={current_option.placeholder} />
+    <TextInput ref={reference} type="text" borderLeftHide placeholder={current_option.placeholder} />
   </div>
 };
 

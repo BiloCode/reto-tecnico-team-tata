@@ -5,9 +5,10 @@ import "./styles.scss";
 export type TProps = {
   placeholder : string;
   type : "text" | "number" | "date";
+  borderLeftHide? : boolean;
 }
 
-const TextInput = forwardRef<HTMLInputElement, TProps>(({ type, placeholder }, ref) => {
+const TextInput = forwardRef<HTMLInputElement, TProps>(({ type, placeholder , borderLeftHide }, ref) => {
   const [ focus , setFocus ] = useState<boolean>();
 
   const onFocus = (ev : FocusEvent<HTMLInputElement>) => {
@@ -21,10 +22,11 @@ const TextInput = forwardRef<HTMLInputElement, TProps>(({ type, placeholder }, r
     setFocus(() => false);
   }
 
+  const input = classnames("input",{ "input--left-border-none" : borderLeftHide });
   const input__placeholder = classnames("input__placeholder",{ focus });
   const input__input = classnames("input__input",{ focus });
   
-  return <div className="input">
+  return <div className={input}>
     <span className={input__placeholder}>{placeholder}</span>
     <input
       type={type}

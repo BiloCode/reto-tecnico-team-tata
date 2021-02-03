@@ -51,4 +51,9 @@ $padding-horizontal: 14px;
       z-index: 1;
     }
   }
+
+  &--left-border-none {
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+  }
 }
