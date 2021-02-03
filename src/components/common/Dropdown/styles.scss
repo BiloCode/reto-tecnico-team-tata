@@ -3,7 +3,7 @@
   box-sizing: border-box;
   border-bottom: 1px solid var(--color-common);
 
-  .dropdown__content {
+  &__content {
     padding: 1.3em 1em;
     display: flex;
     justify-content: space-between;
@@ -16,13 +16,13 @@
     }
   }
 
-  .dropdown__title {
+  &__title {
     color: var(--color-text-light);
     font-family: var(--roboto-font);
     font-weight: 400;
   }
 
-  .dropdown__icon {
+  &__icon {
     line-height: 0;
     color: var(--color-primary);
   }

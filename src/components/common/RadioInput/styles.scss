@@ -5,7 +5,7 @@
   column-gap: 10px;
   cursor: pointer;
   
-  .radio-input__border {
+  &__border {
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -19,14 +19,14 @@
     }
   }
 
-  .radio-input__title {
+  &__title {
     font-weight: 400;
     color: var(--color-text);
     font-family: var(--roboto-font);
     font-size: 16px;
   }
 
-  .radio-input__circle {
+  &__circle {
     width: 16px;
     height: 16px;
     border-radius: 50%;

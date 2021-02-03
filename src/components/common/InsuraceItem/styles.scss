@@ -4,17 +4,17 @@
   column-gap: 10px;
   align-items: center;
 
-  .insurace-item__icon,
-  .insurace-item__text {
+  &__icon,
+  &__text {
     color: #fff;
   }
 
-  .insurace-item__icon {
+  &__icon {
     line-height: 0;
     font-size: 1.4em;
   }
 
-  .insurace-item__text {
+  &__text {
     font-weight: 300;
     font-family: var(--roboto-font);
     font-size: 17px;

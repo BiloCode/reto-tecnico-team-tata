@@ -1,15 +1,13 @@
-import { useState , FocusEvent, FC, ChangeEvent, memo } from "react";
+import { useState , FocusEvent, FC, ChangeEvent, memo, forwardRef } from "react";
 import classnames from 'classnames';
 import "./styles.scss";
 
-type IProps = {
+export type TProps = {
   placeholder : string;
-  defaultValue? : string;
-  type? : "text" | "numeric" | "date";
-  onChange?(ev : ChangeEvent<HTMLInputElement>) : void;
+  type : "text" | "number" | "date";
 }
 
-const TextInput : FC<IProps> = ({ type, onChange, placeholder , defaultValue }) => {
+const TextInput = forwardRef<HTMLInputElement, TProps>(({ type, placeholder }, ref) => {
   const [ focus , setFocus ] = useState<boolean>();
 
   const onFocus = (ev : FocusEvent<HTMLInputElement>) => {
@@ -30,18 +28,13 @@ const TextInput : FC<IProps> = ({ type, onChange, placeholder , defaultValue }) 
     <span className={input__placeholder}>{placeholder}</span>
     <input
       type={type}
+      ref={ref}
       required
-      defaultValue={defaultValue}
       className={input__input}
       onFocus={onFocus}
       onBlur={onBlur}
-      onChange={onChange}
     />
   </div>
-};
-
-TextInput.defaultProps = {
-  type : "text"
-}
+});
 
 export default memo(TextInput);

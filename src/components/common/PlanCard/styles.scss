@@ -10,57 +10,52 @@
   box-sizing: border-box;
   cursor: pointer;
 
-  .plan-card__price,
-  .plan-card__title,
-  .plan-card__time {
+  &__price, &__title, &__time {
     width: 100%;
     font-family: var(--roboto-font);
     color: var(--color-text);
   }
 
-  .plan-card__title,
-  .plan-card__time {
-    font-size: .8em;
-  }
+  &__title, &__time { font-size: .8em; }
 
-  .plan-card__title {
+  &__title {
     text-transform: uppercase;
     font-weight: 400;
   }
 
-  .plan-card__price {
+  &__price {
     display: flex;
     align-items: flex-start;
   }
 
-  .plan-card__price_symbol {
+  &__price_symbol {
     font-size: .8em;
     margin-top: 6px;
   }
 
-  .plan-card__price_value {
+  &__price_value {
     font-size: 1.5em;
     font-weight: 500;
   }
 
-  .plan-card__time {
+  &__time {
     font-weight: 300;
   }
-}
 
-.plan-card--select {
-  position: relative;
-  border-color: var(--color-secondary);
-
-  .plan-card__indicator{
-    display: block;
-    position: absolute;
-    top: 6px;
-    right: 6px;
-  }
+  &--select {
+    position: relative;
+    border-color: var(--color-secondary);
   
-  .plan-card__indicator_image {
-    width: 18px;
-    height: 18px;
+    &__indicator{
+      display: block;
+      position: absolute;
+      top: 6px;
+      right: 6px;
+    }
+    
+    &__indicator_image {
+      width: 18px;
+      height: 18px;
+    }
   }
 }

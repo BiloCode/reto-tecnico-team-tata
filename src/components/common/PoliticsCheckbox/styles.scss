@@ -1,0 +1,50 @@
+.politic-checkbox {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 10px;
+  user-select: none;
+
+  &__input {
+    display: none
+  }
+
+  &__box {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid var(--color-common);
+    cursor: pointer;
+  }
+
+  &__icon {
+    display: none;
+  }
+
+  &__input:checked + &__box {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__input:checked + &__box &__icon {
+    display: block;
+    color: #fff;
+    line-height: 0;
+  }
+
+  &__text {
+    color: var(--color-text);
+    font-family: var(--roboto-font);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.5em;
+
+    a {
+      color: var(--color-text);
+      text-decoration: underline;
+      font-weight: 400;
+    }
+  }
+}

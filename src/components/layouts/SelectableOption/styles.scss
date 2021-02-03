@@ -1,7 +1,7 @@
 .selectable-options {
   padding: 1em 0;
 
-  .selectable-options__title {
+  &__title {
     display: block;
     font-weight: 300;
     color: var(--color-text);
@@ -10,7 +10,7 @@
     margin-bottom: 1.3em;
   }
 
-  .selectable-options__options {
+  &__options {
     display: grid;
     row-gap: 8px;
   }

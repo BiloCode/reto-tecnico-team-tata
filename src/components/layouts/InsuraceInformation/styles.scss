@@ -5,7 +5,7 @@
   justify-content: flex-end;
   align-items: center;
 
-  .insurance-information__text {
+  &__text {
     width: auto;
     height: 80%;
     padding-right: 2em;
@@ -15,12 +15,12 @@
     position: relative;
   }
 
-  .insurance-information__text-container {
+  &__text-container {
     display: grid;
     row-gap: 2em;
   }
 
-  .insurance-information__title {
+  &__title {
     font-size: 3em;
     color: #fff;
     font-weight: 300;
@@ -31,7 +31,7 @@
     }
   }
 
-  .insurance-information__list {
+  &__list {
     display: grid;
     row-gap: 1.3em;
     list-style: none;
@@ -39,7 +39,7 @@
     margin: 0;
   }
 
-  .insurance-information__bottom-message {
+  &__bottom-message {
     position: absolute;
     left: 0;
     bottom: 0;

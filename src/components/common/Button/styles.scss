@@ -3,6 +3,7 @@
   min-width: 180px;
   outline: none;
   padding: 1em;
+  font-size: 15px;
   border-radius: 6px;
   border: none;
   font-weight: bold;
@@ -10,12 +11,12 @@
   text-transform: uppercase;
   cursor: pointer;
 
-  &:not(.button--ghost) {
+  &:not(--ghost) {
     background-color: var(--color-primary);
     color: #fff;
   }
 
-  &.button--ghost {
+  &--ghost {
     background-color: var(--color-common);
     color: var(--color-text-light);
   }
