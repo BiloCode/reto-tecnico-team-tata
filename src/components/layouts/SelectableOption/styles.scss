@@ -1,0 +1,18 @@
+.selectable-options {
+  padding: 1em 0;
+
+  .selectable-options__title {
+    display: block;
+    font-weight: 300;
+    color: var(--color-text);
+    font-size: 1.1em;
+    font-family: var(--roboto-font);
+    margin-bottom: 1.3em;
+  }
+
+  .selectable-options__options {
+    display: grid;
+    row-gap: 8px;
+  }
+
+}

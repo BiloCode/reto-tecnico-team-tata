@@ -1,0 +1,35 @@
+.radio-input {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  column-gap: 10px;
+  cursor: pointer;
+  
+  .radio-input__border {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--color-common);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.select {
+      border-color: var(--color-secondary);
+    }
+  }
+
+  .radio-input__title {
+    font-weight: 400;
+    color: var(--color-text);
+    font-family: var(--roboto-font);
+    font-size: 16px;
+  }
+
+  .radio-input__circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+  }
+}
