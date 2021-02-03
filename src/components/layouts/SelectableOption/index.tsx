@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./styles.scss";
 
-import Input from "components/common/Input";
+import RadioInput from "components/common/RadioInput";
 
 const options = [
   {
@@ -24,7 +24,7 @@ const SelectableOption = () => {
     <div className="selectable-options__options">
       {
         options.map((v) => (
-          <Input.Radio
+          <RadioInput
             key={v.id}
             title={v.text}
             select={v.id === optionActive}

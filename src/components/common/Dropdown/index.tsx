@@ -7,7 +7,7 @@ type TProps = {
 }
 
 const Dropdown : FC<TProps> = ({ title }) => {
-  const [ active , setActive ] = useState<boolean>();
+  const [ active , setActive ] = useState<boolean>(false);
   
   const toggleDropdown = () => setActive(active => !active);
 

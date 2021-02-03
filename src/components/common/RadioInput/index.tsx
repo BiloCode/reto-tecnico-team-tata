@@ -8,7 +8,7 @@ type TProps = {
   onClick?() : void;
 }
 
-const Radio : FC<TProps> = ({ title , select , onClick }) => (
+const RadioInput : FC<TProps> = ({ title , select , onClick }) => (
   <div className="radio-input" onClick={onClick}>
     <div className={classnames("radio-input__border", { select })}>
       { select && <div className="radio-input__circle"></div> }
@@ -17,4 +17,4 @@ const Radio : FC<TProps> = ({ title , select , onClick }) => (
   </div>
 );
 
-export default Radio;
+export default RadioInput;

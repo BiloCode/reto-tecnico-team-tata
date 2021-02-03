@@ -1,0 +1,28 @@
+.thanks-screen {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+
+  .thanks-screen__content {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .thanks-screen__text {
+    width: 550px;
+    display: grid;
+    row-gap: 3em;
+  }
+
+  .thanks-screen__text-container {
+    display: grid;
+    row-gap: 1em;
+  }
+
+  .thanks-screen__button-container {
+    justify-self: end;
+  }
+
+}
