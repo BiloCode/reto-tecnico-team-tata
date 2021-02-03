@@ -1,0 +1,21 @@
+$background-height: 728px;
+
+.background {
+  display: flex;
+}
+
+.background__children-box {
+  min-width: 100px;
+  height: $background-height;
+  background-color: var(--color-primary);
+}
+
+.background__image-container {
+  width: 376px;
+  height: $background-height;
+}
+
+.background__image {
+  width: inherit;
+  height: inherit;
+}

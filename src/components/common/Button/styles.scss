@@ -1,0 +1,20 @@
+.button {
+  outline: none;
+  padding: 1em 2em;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  font-family: var(--roboto-font);
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:not(.button--ghost) {
+    background-color: var(--color-primary);
+    color: #fff;
+  }
+
+  &.button--ghost {
+    background-color: var(--color-common);
+    color: var(--color-text-light);
+  }
+}
