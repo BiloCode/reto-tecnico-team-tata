@@ -4,37 +4,31 @@ import "./styles.scss";
 
 import { InputType , InputPatternType } from 'types';
 
-import useFocusInput from "components/hooks/useFocusInput";
-
 export type TProps = {
   pattern? : InputPatternType;
   maxLength? : number;
   placeholder : string;
   borderLeftHide? : boolean;
+  defaultValue? : string;
   type? : InputType
 }
 
 const TextInput = forwardRef<HTMLInputElement, TProps>(
-  ({ type, placeholder , borderLeftHide , pattern , maxLength }, ref) => {
-    const { focus, onBlur , onFocus } = useFocusInput();  
-
+  ({ type, placeholder , borderLeftHide , maxLength , defaultValue }, ref) => {
     const input = classnames("input",{ "input--left-border-none" : borderLeftHide });
-    const input__placeholder = classnames("input__placeholder",{ focus });
-    const input__input = classnames("input__input",{ focus });
+    const input__placeholder = classnames("input__placeholder");
+    const input__input = classnames("input__input");
     
     return <div className={input}>
-      <span className={input__placeholder}>{placeholder}</span>
       <input
         type={type}
         ref={ref}
         required
-        title={pattern?.message}
-        pattern={pattern?.value}
+        defaultValue={defaultValue}
         className={input__input}
-        onFocus={onFocus}
-        onBlur={onBlur}
         maxLength={maxLength}
       />
+      <span className={input__placeholder}>{placeholder}</span>
     </div>
   }
 );

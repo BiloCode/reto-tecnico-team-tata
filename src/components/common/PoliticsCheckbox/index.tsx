@@ -10,7 +10,7 @@ type TProps = {
 
 const PoliticCheckbox = forwardRef<HTMLInputElement, TProps>((props, ref) => (
   <label htmlFor={props.inputName} className="politic-checkbox">
-    <input ref={ref} id={props.inputName} type="checkbox" className="politic-checkbox__input" />
+    <input ref={ref} id={props.inputName} type="checkbox" required className="politic-checkbox__input" />
     <div className="politic-checkbox__box">
       <div className="politic-checkbox__icon">
         <BsCheck />

@@ -15,6 +15,7 @@
     "@types/react-dom": "^16.9.8",
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
+    "faker": "^5.3.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.1.0",
@@ -48,6 +49,7 @@
   },
   "devDependencies": {
     "@testing-library/react-hooks": "^5.0.3",
+    "@types/faker": "^5.1.6",
     "sass": "^1.32.6"
   }
 }

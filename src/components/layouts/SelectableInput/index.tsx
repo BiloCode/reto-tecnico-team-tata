@@ -8,10 +8,11 @@ import TextInput from "components/common/TextInput";
 import useActive from 'components/hooks/useActive';
 
 type TProps = {
-  reference : RefObject<HTMLInputElement>
+  reference : RefObject<HTMLInputElement>;
+  defaultValue? : string;
 }
 
-const SelectableInput : FC<TProps> = ({ reference }) => {
+const SelectableInput : FC<TProps> = ({ reference , defaultValue }) => {
   const { active , toggleActive } = useActive();
   const [ optionSelect , setOptionSelect ] = useState<number>(0);
 
@@ -57,6 +58,7 @@ const SelectableInput : FC<TProps> = ({ reference }) => {
       ref={reference}
       type={current_option.type}
       borderLeftHide
+      defaultValue={defaultValue}
       placeholder={current_option.placeholder} 
       pattern={current_option.pattern}
       maxLength={current_option.maxLength}

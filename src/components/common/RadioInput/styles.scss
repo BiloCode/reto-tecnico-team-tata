@@ -4,9 +4,12 @@
   align-items: center;
   column-gap: 10px;
   cursor: pointer;
+  position: relative;
   
   &__input {
-    display: none;
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
   }
 
   &__border {

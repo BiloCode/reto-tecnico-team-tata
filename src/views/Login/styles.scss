@@ -31,4 +31,12 @@
     row-gap: 1em;
   }
 
+  &__spinner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+  }
+
 }

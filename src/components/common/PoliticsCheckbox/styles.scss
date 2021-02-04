@@ -3,9 +3,12 @@
   grid-template-columns: auto 1fr;
   column-gap: 10px;
   user-select: none;
+  position: relative;
 
   &__input {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
   }
 
   &__box {

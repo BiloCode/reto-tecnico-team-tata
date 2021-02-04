@@ -3,10 +3,15 @@ import "./styles.scss";
 
 import RadioInput from "components/common/RadioInput";
 
+type TOptions = {
+  title : string;
+  default? : boolean;
+}
+
 type TProps = {
   title : string;
   inputRadioKey : string;
-  options : string[];
+  options : TOptions[];
 }
 
 const SelectableOption = forwardRef<HTMLInputElement, TProps>(
@@ -15,11 +20,12 @@ const SelectableOption = forwardRef<HTMLInputElement, TProps>(
       <span className="selectable-options__title">{title}</span>
       <div className="selectable-options__options">
         {
-          options.map((text, i) => (
+          options.map((v, i) => (
             <RadioInput
               key={i}
               ref={ref}
-              title={text}
+              title={v.title}
+              defaultChecked={v.default}
               name={inputRadioKey}
             />
           ))

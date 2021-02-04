@@ -11,9 +11,10 @@ import SelectableInput from "components/layouts/SelectableInput";
 import PoliticsCheckbox from "components/common/PoliticsCheckbox";
 import useLogin from "components/hooks/useLogin";
 import RootLayout from "components/layouts/RootLayout";
+import Spinner from "components/common/Spinner";
 
 const Login : FC<RouteComponentProps> = () => {
-  const { refs, onSubmit } = useLogin();
+  const { refs, onSubmit , isLoading } = useLogin();
 
   return <RootLayout>
     <InsuraceInformation />
@@ -27,7 +28,12 @@ const Login : FC<RouteComponentProps> = () => {
           <div className="login-screen__form-content">
             <SelectableInput reference={refs.identificator} />
             <TextInput ref={refs.birthday} placeholder="Fecha de nacimiento" type="date" />
-            <TextInput ref={refs.phone} placeholder="Celular" type="number" />
+            <TextInput
+              ref={refs.phone}
+              maxLength={9}
+              placeholder="Celular"
+              pattern={{ value : "[0-9]{9}", message : "Numero invalido" }} 
+            />
           </div>
           <div className="login-screen__form-politics">
             <PoliticsCheckbox
@@ -42,7 +48,13 @@ const Login : FC<RouteComponentProps> = () => {
             />
           </div>  
         </div> 
-        <Button type="submit" text="Comenzemos" />
+        { 
+          isLoading ? 
+            <div className="login-screen__spinner">
+              <Spinner />
+            </div> : 
+            <Button type="submit" text="Comenzemos" /> 
+        }
       </form>
     </div>
   </RootLayout>

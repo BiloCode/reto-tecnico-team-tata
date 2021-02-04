@@ -10,15 +10,21 @@ import SelectableOption from "components/layouts/SelectableOption";
 import SelectableInput from "components/layouts/SelectableInput";
 import useRegisterData from "components/hooks/useRegisterData";
 
+import { useAuthenticationContext } from "context/Authentication/context";
+
 type TProps = TStepScreen & {}
 
 const Register : FC<TProps> = ({ currentStep , onNextScreen , step }) => {
+  const { userData } = useAuthenticationContext();
   const { onSubmit , refs } = useRegisterData(onNextScreen);
+  const { birthday, names, lastname_a, lastname_b,person_protected, gender , identificator } = refs;
+
+  const date = userData.dob.date;
 
   return <StepLayout step={step} currentStep={currentStep}>
     <div className="register-step">
       <div className="register-step__header">
-        <Title>Hola, <b>Pepito</b></Title>
+        <Title>Hola, <b>{userData?.name.first}</b></Title>
         <Description>Valida que los datos sean correctos.</Description>
       </div>
       <form onSubmit={onSubmit} className="register-step__form">
@@ -28,25 +34,31 @@ const Register : FC<TProps> = ({ currentStep , onNextScreen , step }) => {
               Datos personales del titular
             </span>
             <div className="register-step__form-inputs">
-              <SelectableInput reference={refs.identificator} />
-              <TextInput ref={refs.names} placeholder="Nombres" type="text" />
-              <TextInput ref={refs.lastname_a} placeholder="Apellido Paterno" type="text" />
-              <TextInput ref={refs.lastname_b} placeholder="Apellido Materno" type="text" />
-              <TextInput ref={refs.birthday} placeholder="Fecha de Nacimiento" type="date" />
+              <SelectableInput reference={identificator} defaultValue={userData?.id.value} />
+              <TextInput ref={names} placeholder="Nombres" defaultValue={userData?.name.first} />
+              <TextInput ref={lastname_a} placeholder="Apellido Paterno" defaultValue={userData?.name.last} />
+              <TextInput ref={lastname_b} placeholder="Apellido Materno" defaultValue={userData?.name.last} />
+              <TextInput ref={birthday} placeholder="Fecha de Nacimiento" type="date" defaultValue={date} />
             </div>
           </div>
           <div className="register-step__selectable-inputs">
             <SelectableOption
-              ref={refs.gender}
+              ref={gender}
               title="Genero"
               inputRadioKey="gender"
-              options={["Masculino","Femenino"]}
+              options={[
+                { title : "Masculino", default : userData?.gender === "male" },
+                { title : "Femenino", default : userData?.gender === "female" }
+              ]}
             />
             <SelectableOption
-              ref={refs.person_protected}
+              ref={person_protected}
               title="¿A quien vamos a asegurar?"
               inputRadioKey="person"
-              options={["Solo a mi","A mi y a mi familia"]}
+              options={[
+                { title : "Solo a mi" },
+                { title : "A mi y a mi familia" }
+              ]}
             />
           </div>
         </div>

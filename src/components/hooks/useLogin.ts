@@ -1,10 +1,14 @@
-import { FormEvent, useRef } from "react";
+import { FormEvent, useRef, useState } from "react";
+import faker from "faker";
 import { useAuthenticationContext } from "context/Authentication/context";
 
 import GetUserRandom from "utils/GetUserRandom";
+import GetUserRandomWithFaker from "utils/GetUserRandomWithFaker";
 
 export default () => {
   const { userDataMutate } = useAuthenticationContext();
+
+  const [ isLoading , setIsLoading ] = useState<boolean>(false);
 
   const protection_politics = useRef<HTMLInputElement>(null);
   const comunication_politics = useRef<HTMLInputElement>(null);
@@ -21,9 +25,26 @@ export default () => {
       return;
     }
 
-    const GetUser = new GetUserRandom();
-    const user_random = await GetUser.__invoke();
-    userDataMutate(user_random);
+    setIsLoading(() => true);
+
+    const data = {
+      id : { value : identificator.current.value },
+      dob : { date : birthday.current.value }
+    }
+
+    try {
+      const GetUser = new GetUserRandom();
+      const user_random = await GetUser.__invoke();
+      if(user_random){
+        userDataMutate({ ...user_random, ...data });
+      }
+    } catch (error) {
+      const GetUserFake= new GetUserRandomWithFaker();
+      const fake_user = GetUserFake.__invoke();
+      userDataMutate({ ...fake_user, ...data });
+    } finally {
+      setIsLoading(() => false);
+    }
   }
 
   return {
@@ -34,6 +55,7 @@ export default () => {
       identificator,
       phone
     },
-    onSubmit
+    onSubmit,
+    isLoading
   }
 }
