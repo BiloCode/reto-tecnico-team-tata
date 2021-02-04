@@ -2,6 +2,7 @@ export const selectable_options = [
   {
     id : 0,
     title : "Género",
+    inputRadioKey : "gender",
     options : [
       {
         id : 0,
@@ -16,6 +17,7 @@ export const selectable_options = [
   {
     id : 1,
     title : "¿A quien vamos a asegurar?",
+    inputRadioKey : "person",
     options : [
       {
         id : 0,

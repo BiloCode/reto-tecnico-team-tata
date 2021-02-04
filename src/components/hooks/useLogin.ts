@@ -9,6 +9,14 @@ export default () => {
 
   const onSubmit = (ev : FormEvent) => {
     ev.preventDefault();
+
+    if(!protection_politics.current?.checked || !comunication_politics.current?.checked ||
+      !identificator.current?.value || !birthday.current?.value || !phone.current?.value
+    ){
+      return;
+    }
+
+    console.log("Ok");
   }
 
   return {

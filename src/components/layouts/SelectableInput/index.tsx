@@ -1,20 +1,11 @@
+import { FC, RefObject, useState } from 'react';
 import { BsChevronDown } from 'react-icons/bs'
 import "./styles.scss";
 
+import dropdown_options from './config';
+
 import TextInput from "components/common/TextInput";
 import useActive from 'components/hooks/useActive';
-import { FC, RefObject, useState } from 'react';
-
-const dropdown_options = [
-  {
-    text : "dni",
-    placeholder : "Nro. de documento"
-  },
-  {
-    text : "carnet",
-    placeholder : "Nro. de carnet"
-  }
-]
 
 type TProps = {
   reference : RefObject<HTMLInputElement>
@@ -62,7 +53,14 @@ const SelectableInput : FC<TProps> = ({ reference }) => {
         )
       }
     </div>
-    <TextInput ref={reference} type="text" borderLeftHide placeholder={current_option.placeholder} />
+    <TextInput
+      ref={reference}
+      type={current_option.type}
+      borderLeftHide
+      placeholder={current_option.placeholder} 
+      pattern={current_option.pattern}
+      maxLength={current_option.maxLength}
+    />
   </div>
 };
 

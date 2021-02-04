@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import classnames from 'classnames';
 import CorrectIcon from 'assets/icons/gl_correct.png';
 import "./styles.scss";
@@ -34,4 +34,4 @@ const PlanCard : FC<TProps> = ({ title , price, select , onClick }) => {
   </div>
 };
 
-export default PlanCard;
+export default memo(PlanCard, (prev, next) => prev.select === next.select);

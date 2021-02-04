@@ -1,20 +1,19 @@
-import { FC } from "react";
-import classnames from 'classnames';
+import { FC, forwardRef } from "react";
 import "./styles.scss";
 
 type TProps = {
   title : string;
-  select? : boolean;
-  onClick?() : void;
+  name : string;
 }
 
-const RadioInput : FC<TProps> = ({ title , select , onClick }) => (
-  <div className="radio-input" onClick={onClick}>
-    <div className={classnames("radio-input__border", { select })}>
-      { select && <div className="radio-input__circle"></div> }
+const RadioInput = forwardRef<HTMLInputElement, TProps>(({ title , name }, ref) => (
+  <label className="radio-input">
+    <input ref={ref} type="radio" name={name} className="radio-input__input" />
+    <div className="radio-input__border">
+      <div className="radio-input__circle"></div>
     </div>
     <span className="radio-input__title">{title}</span>
-  </div>
-);
+  </label>
+));
 
 export default RadioInput;

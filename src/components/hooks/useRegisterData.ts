@@ -6,6 +6,8 @@ export default (onNextScreen? : () => void) => {
   const lastname_a = useRef<HTMLInputElement>(null);
   const lastname_b = useRef<HTMLInputElement>(null);
   const birthday = useRef<HTMLInputElement>(null);
+  const gender = useRef<HTMLInputElement>(null);
+  const person_protected = useRef<HTMLInputElement>(null);
 
   const onSubmit = (ev : FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
@@ -26,7 +28,9 @@ export default (onNextScreen? : () => void) => {
       names,
       lastname_a,
       lastname_b,
-      birthday
+      birthday,
+      gender,
+      person_protected
     },
     onSubmit
   }

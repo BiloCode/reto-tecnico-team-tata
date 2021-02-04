@@ -5,6 +5,10 @@
   column-gap: 10px;
   cursor: pointer;
   
+  &__input {
+    display: none;
+  }
+
   &__border {
     width: 24px;
     height: 24px;
@@ -13,10 +17,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    &.select {
-      border-color: var(--color-secondary);
-    }
   }
 
   &__title {
@@ -26,7 +26,11 @@
     font-size: 16px;
   }
 
-  &__circle {
+  &__input:checked + &__border {
+    border-color: var(--color-secondary);
+  }
+
+  &__input:checked + &__border > &__circle {
     width: 16px;
     height: 16px;
     border-radius: 50%;

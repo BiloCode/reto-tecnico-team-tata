@@ -12,13 +12,12 @@ import SelectableOption from "components/layouts/SelectableOption";
 import SelectableInput from "components/layouts/SelectableInput";
 import useRegisterData from "components/hooks/useRegisterData";
 
-type TProps = TStepScreen & {
-}
+type TProps = TStepScreen & {}
 
-const Register : FC<TProps> = ({ currentStep , onNextScreen }) => {
+const Register : FC<TProps> = ({ currentStep , onNextScreen , step }) => {
   const { onSubmit , refs } = useRegisterData(onNextScreen);
 
-  return <StepLayout currentStep={currentStep}>
+  return <StepLayout step={step} currentStep={currentStep}>
     <div className="register-step">
       <div className="register-step__header">
         <Title>Hola, <b>Pepito</b></Title>
@@ -44,6 +43,7 @@ const Register : FC<TProps> = ({ currentStep , onNextScreen }) => {
                 <SelectableOption
                   key={v.id}
                   title={v.title}
+                  inputRadioKey={v.inputRadioKey}
                   options={v.options}
                 />
               ))

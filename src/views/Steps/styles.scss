@@ -6,6 +6,16 @@
 
   &__content {
     width: 550px;
+    padding: 2em 0;
+    box-sizing: border-box;
+    display: grid;
+    row-gap: 2em;
+    align-items: flex-start;
+  }
+
+  &__steps {
+    width: 510px;
+    justify-self: flex-end;
     display: grid;
     align-items: flex-start;
     overflow-x: hidden;

@@ -11,12 +11,12 @@ import ProtectionBenefits from "components/layouts/ProtectionBenefits";
 type TProps = TStepScreen &{
 }
 
-const ProtectionSelect : FC<TProps> = ({ currentStep }) => {
-  return <StepLayout currentStep={currentStep} >
+const ProtectionSelect : FC<TProps> = ({ currentStep , step }) => {
+  return <StepLayout step={step} currentStep={currentStep} >
     <div className="protection-select-screen">
       <div className="protection-select-screen__header">
         <Title>Elige <b>tu proteccíon</b></Title>
-        <Description>Valida que los datos sean correctos.</Description>
+        <Description>Seleccion tu plan de salud ideal.</Description>
       </div>
       <ProtectionBenefits />
       <div className="protection-select-screen__footer">
