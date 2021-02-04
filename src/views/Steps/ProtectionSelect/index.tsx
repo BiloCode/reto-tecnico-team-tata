@@ -7,11 +7,14 @@ import StepLayout , { TStepScreen } from "components/layouts/StepLayout";
 import Dropdown from "components/common/Dropdown";
 import Button from "components/common/Button";
 import ProtectionBenefits from "components/layouts/ProtectionBenefits";
+import { navigate } from "@reach/router";
 
 type TProps = TStepScreen &{
 }
 
 const ProtectionSelect : FC<TProps> = ({ currentStep , step }) => {
+  const NavigateToThanks = () => navigate("/thanks");
+
   return <StepLayout step={step} currentStep={currentStep} >
     <div className="protection-select-screen">
       <div className="protection-select-screen__header">
@@ -28,7 +31,7 @@ const ProtectionSelect : FC<TProps> = ({ currentStep , step }) => {
       </div>
       <div className="protection-select-screen__buttons">
         <Button text="Enviar cotizacion por correo" ghost />
-        <Button text="Comprar Plan" />
+        <Button text="Comprar Plan" onClick={NavigateToThanks} />
       </div>
     </div>
   </StepLayout>
