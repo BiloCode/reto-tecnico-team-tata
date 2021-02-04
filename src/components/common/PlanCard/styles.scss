@@ -9,6 +9,7 @@
   padding: 1.5em 1em;
   box-sizing: border-box;
   cursor: pointer;
+  transition: .3s;
 
   &__price, &__title, &__time {
     width: 100%;

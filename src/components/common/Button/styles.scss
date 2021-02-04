@@ -2,21 +2,30 @@
   min-width: 180px;
   outline: none;
   padding: 1em;
-  font-size: 15px;
+  font-size: 14px;
   border-radius: 6px;
   border: none;
   font-weight: 500;
   font-family: var(--roboto-font);
   text-transform: uppercase;
   cursor: pointer;
+  transition: .3s;
 
   &:not(--ghost) {
     background-color: var(--color-primary);
     color: #fff;
   }
 
+  &:hover {
+    background-color: var(--color-primary-dark);
+  }
+
   &.button--ghost {
-    background-color: var(--color-common);
+    background-color: var(--color-common-light);
     color: var(--color-text-light);
+
+    &:hover {
+      background-color: var(--color-common-light);
+    }
   }
 }

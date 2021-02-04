@@ -11,10 +11,17 @@ $background-height: 728px;
   &__image-container {
     width: 376px;
     height: $background-height;
+    position: relative;
   }
   
   &__image {
     width: inherit;
     height: inherit;
+  }
+
+  &__image-float {
+    position: absolute;
+    right: -30%;
+    bottom: 30%;
   }
 }

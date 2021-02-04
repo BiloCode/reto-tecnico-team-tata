@@ -24,7 +24,7 @@
 
   &__title {
     font-weight: 400;
-    color: var(--color-text);
+    color: var(--color-common);
     font-family: var(--roboto-font);
     font-size: 16px;
   }
@@ -38,5 +38,9 @@
     height: 16px;
     border-radius: 50%;
     background-color: var(--color-secondary);
+  }
+
+  &__input:checked ~ &__title {
+    color: var(--color-text);
   }
 }

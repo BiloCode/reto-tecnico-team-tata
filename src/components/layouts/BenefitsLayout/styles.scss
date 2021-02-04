@@ -1,17 +1,17 @@
 $global-padding: 2.5em 2em;
 
 .benefits-layout {
-  border: 1px solid var(--color-common);
+  border: 1px solid var(--color-common-light);
   border-radius: 8px;
 
   &__header,
   &__detail {
-    border-bottom: 1px solid var(--color-common);
+    border-bottom: 1px solid var(--color-common-light);
   }
 
   &__header {
     padding: .8em 1em;
-    background-color: var(--color-common);
+    background-color: var(--color-common-light);
     text-align: center;
   }
 

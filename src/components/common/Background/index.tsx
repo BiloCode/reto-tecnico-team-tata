@@ -1,6 +1,8 @@
 import { FC } from 'react';
-import Base from 'assets/images/Base.png';
 import "./styles.scss";
+
+import Base from 'assets/images/Base.png';
+import Other from 'assets/images/Illustration-base.png';
 
 const Background : FC = ({ children }) => (
   <div className="background">
@@ -9,6 +11,7 @@ const Background : FC = ({ children }) => (
     </div>
     <div className="background__image-container">
       <img className="background__image" src={Base} alt="base-default" />
+      <img className="background__image-float" src={Other} alt="base-float" />
     </div>
   </div>
 );

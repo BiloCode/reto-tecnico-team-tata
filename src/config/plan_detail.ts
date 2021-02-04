@@ -3,7 +3,7 @@ import Illustration from "assets/images/Illustration.png"
 export const plan_detail = [
   {
     price : 1,
-    plan_name : "basic",
+    plan_name : "basico",
     image : Illustration,
     benefits_id : [0,1]
   },
@@ -20,7 +20,7 @@ export const plan_detail = [
     benefits_id : [0,1,2,3,4]
   },
   {
-    price : 10,
+    price : 15,
     plan_name : "full",
     image : Illustration,
     benefits_id : [0,1,2,3,4,5]
