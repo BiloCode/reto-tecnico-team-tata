@@ -1,17 +1,12 @@
-import { FC, forwardRef, useState } from "react";
+import { forwardRef } from "react";
 import "./styles.scss";
 
 import RadioInput from "components/common/RadioInput";
 
-type TSelectableOption = {
-  id : number;
-  text : string;
-}
-
 type TProps = {
   title : string;
   inputRadioKey : string;
-  options : TSelectableOption[];
+  options : string[];
 }
 
 const SelectableOption = forwardRef<HTMLInputElement, TProps>(
@@ -20,11 +15,11 @@ const SelectableOption = forwardRef<HTMLInputElement, TProps>(
       <span className="selectable-options__title">{title}</span>
       <div className="selectable-options__options">
         {
-          options.map((v) => (
+          options.map((text, i) => (
             <RadioInput
-              key={v.id}
+              key={i}
               ref={ref}
-              title={v.text}
+              title={text}
               name={inputRadioKey}
             />
           ))

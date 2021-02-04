@@ -1,8 +1,9 @@
 import { FC } from "react";
 import "./styles.scss";
 
-import BenefitsItem from "components/common/BenefitsItem";
 import { benefits } from "config/benefits";
+
+import BenefitsItem from "components/common/BenefitsItem";
 
 type TProps = {
   price : number;
@@ -33,6 +34,7 @@ const BenefitsLayout : FC<TProps> = ({ price , plan_name, image , benefits_activ
             key={v.id}
             title={v.title}
             subtitle={v.subtitle}
+            bold={v.bold}
             active={benefits_active.includes(v.id)}
           />    
         ))

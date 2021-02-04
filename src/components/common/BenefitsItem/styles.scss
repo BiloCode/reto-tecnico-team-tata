@@ -23,7 +23,12 @@
   }
 
   &__title {
-    font-size: 16px;
+    font-size: 17px;
+  }
+
+  &--bold-title {
+    font-weight: 500;
+    font-size: 19px;
   }
 
   &__subtitle {
@@ -31,27 +36,11 @@
     box-sizing: border-box;
     font-size: 13px;
   }
-}
 
-.benefits-item.active {
+  &--active &__icon { color: var(--color-primary); }
+  &--active &__title { color: var(--color-text); }
 
-  .benefits-item__icon{
-    color: var(--color-primary);
-  }
+  &--active &__title , &__subtitle { text-decoration: none; }
 
-  .benefits-item__title,
-  .benefits-item__subtitle {
-    text-decoration: none;
-  }
-
-  .benefits-item__title{
-    color: var(--color-text);
-    font-weight: 500;
-    font-size: 19px;
-  }
-
-  .benefits-item__subtitle {
-    color: var(--color-text-light);
-  }
-
+  &--active &__subtitle { color: var(--color-text-light); }
 }

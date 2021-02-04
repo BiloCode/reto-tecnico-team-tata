@@ -1,10 +1,14 @@
 import { Suspense } from "react";
+
 import ApplicationRouter from "router/ApplicationRouter";
+import AuthenticationProvider from "context/Authentication/provider";
 
 function App() {
   return (
     <Suspense fallback={<></>}>
-      <ApplicationRouter />
+      <AuthenticationProvider>
+        <ApplicationRouter />
+      </AuthenticationProvider>
     </Suspense>
   );
 }

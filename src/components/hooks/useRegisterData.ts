@@ -12,9 +12,12 @@ export default (onNextScreen? : () => void) => {
   const onSubmit = (ev : FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
 
+    console.log(gender.current?.checked, person_protected.current?.checked);
+
     if(!identificator.current?.value || !names.current?.value ||
       !lastname_a.current?.value || !lastname_b.current?.value ||
-      !birthday.current?.value){
+      !birthday.current?.value || !person_protected.current?.checked || !gender.current?.checked
+    ){
       return;
     }
 

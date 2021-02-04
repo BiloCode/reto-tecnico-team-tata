@@ -1,8 +1,6 @@
 import { FC } from "react";
 import "./styles.scss";
 
-import { selectable_options } from './config';
-
 import Title from "components/common/Title";
 import Description from "components/common/Description";
 import StepLayout , { TStepScreen } from "components/layouts/StepLayout";
@@ -38,16 +36,18 @@ const Register : FC<TProps> = ({ currentStep , onNextScreen , step }) => {
             </div>
           </div>
           <div className="register-step__selectable-inputs">
-            {
-              selectable_options.map(v => (
-                <SelectableOption
-                  key={v.id}
-                  title={v.title}
-                  inputRadioKey={v.inputRadioKey}
-                  options={v.options}
-                />
-              ))
-            }
+            <SelectableOption
+              ref={refs.gender}
+              title="Genero"
+              inputRadioKey="gender"
+              options={["Masculino","Femenino"]}
+            />
+            <SelectableOption
+              ref={refs.person_protected}
+              title="¿A quien vamos a asegurar?"
+              inputRadioKey="person"
+              options={["Solo a mi","A mi y a mi familia"]}
+            />
           </div>
         </div>
         <div className="register-step__buttons">
