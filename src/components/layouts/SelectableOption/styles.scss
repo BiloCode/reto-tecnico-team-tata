@@ -1,5 +1,4 @@
 .selectable-options {
-  padding: 1em 0;
 
   &__title {
     display: block;
@@ -12,7 +11,7 @@
 
   &__options {
     display: grid;
-    row-gap: 8px;
+    row-gap: 1em;
   }
 
 }

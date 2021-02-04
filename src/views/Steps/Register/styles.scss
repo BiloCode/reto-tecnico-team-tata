@@ -1,4 +1,48 @@
 .register-step {
+  padding: 3em 0;
+  box-sizing: border-box;
   display: grid;
-  row-gap: 5em;
+  row-gap: 4.5em;
+
+  &__header {
+    display: grid;
+    row-gap: .6em;
+  }
+
+  &__form {
+    display: grid;
+    row-gap: 5em;
+  }
+
+  &__inputs {
+    display: grid;
+    row-gap: 2em;
+  }
+
+  &__normal-inputs {
+    display: grid;
+    row-gap: 1.5em;  
+  }
+
+  &__form-title {
+    font-family: var(--roboto-font);
+    color: var(--color-text);
+    font-weight: 300;
+    font-size: 1.3em;
+  }
+
+  &__form-inputs {
+    display: grid;
+    row-gap: 1em;  
+  }
+
+  &__selectable-inputs {
+    display: grid;
+    row-gap: 2em;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
 }

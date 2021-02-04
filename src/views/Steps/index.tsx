@@ -8,7 +8,7 @@ import Background from "components/common/Background";
 import RootLayout from "components/layouts/RootLayout";
 
 const Steps : FC<RouteComponentProps> = () => {
-  const [ currentStep , setCurrentStep ] = useState<number>(0);
+  const [ currentStep , setCurrentStep ] = useState<number>(1);
 
   const ChangeScreen = () => setCurrentStep(step => step + 1);
 

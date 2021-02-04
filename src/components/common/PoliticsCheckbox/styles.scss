@@ -35,16 +35,15 @@
   }
 
   &__text {
-    color: var(--color-text);
+    color: var(--color-text-light);
     font-family: var(--roboto-font);
     font-weight: 300;
     font-size: 14px;
     line-height: 1.5em;
 
     a {
-      color: var(--color-text);
+      color: var(--color-text-light);
       text-decoration: underline;
-      font-weight: 400;
     }
   }
 }
