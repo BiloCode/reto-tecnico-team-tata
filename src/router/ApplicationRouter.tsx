@@ -1,5 +1,6 @@
 import { lazy } from "react";
 import { Router } from "@reach/router";
+import RedirectView from "./RedirectView";
 
 // Views
 const Login = lazy(() => import("views/Login"));
@@ -11,6 +12,7 @@ const ApplicationRouter = () => (
     <Login path="/" />
     <Steps path="/steps" />
     <Thanks path="/thanks" />
+    <RedirectView path="*" />
   </Router>
 );
 
