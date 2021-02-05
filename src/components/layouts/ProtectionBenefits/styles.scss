@@ -8,4 +8,11 @@
     column-gap: 10px;
   }
 
+  
+  @media screen and (max-width: 680px) {
+    &__plan-cards {
+      column-gap: 5px;
+      font-size: .9em;
+    }
+  }
 }
