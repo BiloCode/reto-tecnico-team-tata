@@ -5,7 +5,7 @@ import "./styles.scss";
 import dropdown_options from './config';
 
 import TextInput from "components/common/TextInput";
-import useActive from 'components/hooks/useActive';
+import useSelectableInput from 'components/hooks/useSelectableInput';
 
 type TProps = {
   reference : RefObject<HTMLInputElement>;
@@ -13,13 +13,13 @@ type TProps = {
 }
 
 const SelectableInput : FC<TProps> = ({ reference , defaultValue }) => {
-  const { active , toggleActive } = useActive();
+  const { display , toggleDisplay } = useSelectableInput();
   const [ optionSelect , setOptionSelect ] = useState<number>(0);
 
   const SelectOption = (id : number) => () => {
     if(!reference.current) return;
 
-    toggleActive();
+    toggleDisplay();
     setOptionSelect(() => id);
 
     reference.current.value = "";
@@ -30,14 +30,14 @@ const SelectableInput : FC<TProps> = ({ reference , defaultValue }) => {
 
   return <div className="selectable-input">
     <div className="selectable-input__container">
-      <div className="selectable-input__content" onClick={toggleActive}>
+      <div className="selectable-input__content" onClick={toggleDisplay}>
         <span className="selectable-input__text">{current_option.text}</span>
         <span className="selectable-input__icon">
           <BsChevronDown />
         </span>
       </div>
       {
-        active && (
+        display && (
           <div className="selectable-input__dropdown">
             {
               dropdown_options.map((v,i) => (

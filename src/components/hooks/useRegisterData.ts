@@ -1,6 +1,9 @@
 import { FormEvent, useRef } from "react";
+import { useStepContext } from "context/Step/context";
 
 export default (onNextScreen? : () => void) => {
+  const { secureDataMutateStepRegister } = useStepContext();
+
   const identificator = useRef<HTMLInputElement>(null);
   const names = useRef<HTMLInputElement>(null);
   const lastname_a = useRef<HTMLInputElement>(null);
@@ -18,6 +21,16 @@ export default (onNextScreen? : () => void) => {
       !gender.current?.value){
       return;
     }
+
+    secureDataMutateStepRegister({
+      birthday : birthday.current.value,
+      gender : gender.current.value,
+      dni : identificator.current.value,
+      entity_secure : person_protected.current.value,
+      lastname_p : lastname_a.current.value,
+      lastname_m : lastname_b.current.value,
+      names : names.current.value
+    });
 
     window.scrollTo({ top : 0 , behavior : "smooth" });
     onNextScreen && onNextScreen();

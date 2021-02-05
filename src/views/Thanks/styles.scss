@@ -4,7 +4,7 @@
   justify-items: center;
   align-items: center;
 
-  .thanks-screen__text {
+  &__text {
     width: 550px;
     display: grid;
     row-gap: 3em;
@@ -12,13 +12,19 @@
     border-top: 1px solid var(--color-common);
   }
 
-  .thanks-screen__text-container {
+  &__text-container {
     display: grid;
     row-gap: 1em;
   }
 
-  .thanks-screen__button-container {
+  &__button-container {
     justify-self: end;
+  }
+
+  @media screen and (max-width: 680px) {
+    &__text {
+      width: 90%;
+    }
   }
 
 }

@@ -8,8 +8,12 @@ import Description from "components/common/Description";
 import Button from "components/common/Button";
 import RootLayout from "components/layouts/RootLayout";
 
-const Thanks : FC<RouteComponentProps> = () => (
-  <RootLayout>
+import useLogout from "components/hooks/useLogout";
+
+const Thanks : FC<RouteComponentProps> = () => {
+  const Logout = useLogout();
+
+  return <RootLayout>
     <Background />
     <div className="thanks-screen">
       <div className="thanks-screen__text">
@@ -23,11 +27,11 @@ const Thanks : FC<RouteComponentProps> = () => (
           </Description>
         </div>
         <div className="thanks-screen__button-container">
-          <Button text="Ir a salud" />
+          <Button onClick={Logout}>Ir a salud</Button>
         </div>
       </div>
     </div>
   </RootLayout>
-);
+};
 
 export default Thanks;

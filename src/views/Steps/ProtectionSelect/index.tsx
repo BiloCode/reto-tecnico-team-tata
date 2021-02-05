@@ -30,8 +30,8 @@ const ProtectionSelect : FC<TProps> = ({ currentStep , step }) => {
         <Dropdown title="Exclusiones" />
       </div>
       <div className="protection-select-screen__buttons">
-        <Button text="Enviar cotizacion por correo" ghost />
-        <Button text="Comprar Plan" onClick={NavigateToThanks} />
+        <Button ghost>Enviar cotizacion por correo</Button>
+        <Button onClick={NavigateToThanks}>Comprar Plan</Button>
       </div>
     </div>
   </StepLayout>

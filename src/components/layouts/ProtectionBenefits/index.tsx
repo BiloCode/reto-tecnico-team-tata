@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./styles.scss";
 
 import { plan_detail } from "config/plan_detail";
@@ -7,10 +6,10 @@ import { plan_card } from "config/plan_card";
 import PlanCard from "components/common/PlanCard";
 import BenefitsLayout from "../BenefitsLayout";
 
-const ProtectionBenefits = () => {
-  const [ planCardActive , setPlanCardActive ] = useState<number>(0);
+import useProtectionBenefits from "components/hooks/useProtectionBenefits";
 
-  const ChangePlanCardActive = (id : number) => () => setPlanCardActive(() => id);
+const ProtectionBenefits = () => {
+  const { planCardActive, ChangePlanCardActive } = useProtectionBenefits();
   const currentPlan = plan_detail[planCardActive];
 
   return <div className="protection-benefits">

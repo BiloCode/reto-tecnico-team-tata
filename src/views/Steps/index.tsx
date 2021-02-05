@@ -9,6 +9,7 @@ import RootLayout from "components/layouts/RootLayout";
 import StepIndicator from "components/layouts/StepIndicator";
 
 import useStepScreenController from "components/hooks/useStepScreenController";
+import StepProvider from "context/Step/provider";
 
 const Steps : FC<RouteComponentProps> = () => {
   const { NextScreen , PreviousScreen , currentStep } = useStepScreenController();  
@@ -22,16 +23,18 @@ const Steps : FC<RouteComponentProps> = () => {
           className="steps-screen__steps"
           style={{ gridTemplateColumns : `repeat(${steps_config.length}, 100%)` }}
         >
-          {
-            steps_config.map(v => (
-              <v.Component
-                key={v.step}
-                step={v.step}
-                currentStep={currentStep}
-                onNextScreen={NextScreen}
-              />
-            ))
-          }
+          <StepProvider>
+            {
+              steps_config.map(v => (
+                <v.Component
+                  key={v.step}
+                  step={v.step}
+                  currentStep={currentStep}
+                  onNextScreen={NextScreen}
+                />
+              ))
+            }
+          </StepProvider>
         </div>  
       </div>
     </div>

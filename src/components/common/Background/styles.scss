@@ -24,4 +24,8 @@ $background-height: 728px;
     right: -30%;
     bottom: 30%;
   }
+
+  @media screen and (max-width: 680px) {
+    display: none;
+  }
 }

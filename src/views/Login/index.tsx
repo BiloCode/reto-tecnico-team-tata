@@ -8,7 +8,7 @@ import TextInput from "components/common/TextInput";
 import Title from "components/common/Title";
 import Description from "components/common/Description";
 import SelectableInput from "components/layouts/SelectableInput";
-import PoliticsCheckbox from "components/common/PoliticsCheckbox";
+import CheckboxPolitics from "components/common/CheckboxPolitics";
 import useLogin from "components/hooks/useLogin";
 import RootLayout from "components/layouts/RootLayout";
 import Spinner from "components/common/Spinner";
@@ -36,12 +36,12 @@ const Login : FC<RouteComponentProps> = () => {
             />
           </div>
           <div className="login-screen__form-politics">
-            <PoliticsCheckbox
+            <CheckboxPolitics
               ref={refs.comunication_politics}
               inputName="protection"
               text="Politica de envio de Comunicaciones Comerciales"  
             />
-            <PoliticsCheckbox
+            <CheckboxPolitics
               ref={refs.protection_politics}
               inputName="comunication"
               text="Politica de proteccion de datos personales y los terminos y condiciones"  
@@ -53,7 +53,9 @@ const Login : FC<RouteComponentProps> = () => {
             <div className="login-screen__spinner">
               <Spinner />
             </div> : 
-            <Button type="submit" text="Comenzemos" /> 
+            <div className="login-screen__button">
+              <Button type="submit">Comenzemos</Button>
+            </div>
         }
       </form>
     </div>

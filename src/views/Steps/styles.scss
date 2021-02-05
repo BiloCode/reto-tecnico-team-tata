@@ -20,4 +20,14 @@
     align-items: flex-start;
     overflow-x: hidden;
   }
+
+  @media screen and (max-width: 680px) {
+    &__content {
+      width: 90%;
+    }
+
+    &__steps {
+      width: 100%;
+    }
+  }
 }

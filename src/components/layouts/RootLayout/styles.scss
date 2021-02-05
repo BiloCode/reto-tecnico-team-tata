@@ -4,4 +4,8 @@
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: flex-start;
+
+  @media screen and (max-width: 680px) {
+    grid-template-columns: 1fr;
+  }
 }

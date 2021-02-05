@@ -8,12 +8,14 @@
     line-height: 0;
     font-size: 1.1em;
     color: var(--color-common);
+    transition: .3s;
   }
 
   &__title,
   &__subtitle {
     text-decoration: line-through;
     color: var(--color-common);
+    transition: .3s;
   }
 
   &__text {

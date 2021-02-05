@@ -1,5 +1,4 @@
 import { FormEvent, useRef, useState } from "react";
-import faker from "faker";
 import { useAuthenticationContext } from "context/Authentication/context";
 
 import GetUserRandom from "utils/GetUserRandom";
@@ -16,20 +15,40 @@ export default () => {
   const birthday = useRef<HTMLInputElement>(null);
   const phone = useRef<HTMLInputElement>(null);
 
-  const onSubmit = async (ev : FormEvent) => {
-    ev.preventDefault();
-
+  const _isInputsOk = () => {
     if(!protection_politics.current?.checked || !comunication_politics.current?.checked ||
       !identificator.current?.value || !birthday.current?.value || !phone.current?.value
     ){
-      return;
+      return false;
     }
 
-    setIsLoading(() => true);
+    let isNumber = /[0-9]{8}/g
+    if(!isNumber.test(identificator.current.value)){
+      identificator.current.focus();
+      return false;
+    }
 
+    let isNumberPhone = /[0-9]{9}/g
+    if(!isNumberPhone.test(phone.current.value)){
+      phone.current.focus();
+      return false;
+    }
+
+    return true;
+  }
+
+  const onSubmit = async (ev : FormEvent) => {
+    ev.preventDefault();
+
+    if(!_isInputsOk()){
+      alert("Existen campos invalidos");
+      return;
+    }
+      
+    setIsLoading(() => true);
     const data = {
-      id : { value : identificator.current.value },
-      dob : { date : birthday.current.value }
+      id : { value : identificator.current!.value },
+      dob : { date : birthday.current!.value }
     }
 
     try {

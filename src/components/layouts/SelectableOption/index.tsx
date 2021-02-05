@@ -5,6 +5,7 @@ import RadioInput from "components/common/RadioInput";
 
 type TOptions = {
   title : string;
+  defaultValue : string;
   default? : boolean;
 }
 
@@ -25,6 +26,7 @@ const SelectableOption = forwardRef<HTMLInputElement, TProps>(
               key={i}
               ref={ref}
               title={v.title}
+              defaultValue={v.defaultValue}
               defaultChecked={v.default}
               name={inputRadioKey}
             />

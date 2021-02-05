@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { AiOutlineRight } from 'react-icons/ai'
 import "./styles.scss";
 
 import Title from "components/common/Title";
@@ -19,8 +20,6 @@ const Register : FC<TProps> = ({ currentStep , onNextScreen , step }) => {
   const { onSubmit , refs } = useRegisterData(onNextScreen);
   const { birthday, names, lastname_a, lastname_b,person_protected, gender , identificator } = refs;
 
-  const date = userData.dob.date;
-
   return <StepLayout step={step} currentStep={currentStep}>
     <div className="register-step">
       <div className="register-step__header">
@@ -38,7 +37,7 @@ const Register : FC<TProps> = ({ currentStep , onNextScreen , step }) => {
               <TextInput ref={names} placeholder="Nombres" defaultValue={userData?.name.first} />
               <TextInput ref={lastname_a} placeholder="Apellido Paterno" defaultValue={userData?.name.last} />
               <TextInput ref={lastname_b} placeholder="Apellido Materno" defaultValue={userData?.name.last} />
-              <TextInput ref={birthday} placeholder="Fecha de Nacimiento" type="date" defaultValue={date} />
+              <TextInput ref={birthday} placeholder="Fecha de Nacimiento" type="date" defaultValue={userData?.dob.date} />
             </div>
           </div>
           <div className="register-step__selectable-inputs">
@@ -47,8 +46,8 @@ const Register : FC<TProps> = ({ currentStep , onNextScreen , step }) => {
               title="Genero"
               inputRadioKey="gender"
               options={[
-                { title : "Masculino", default : userData?.gender === "male" },
-                { title : "Femenino", default : userData?.gender === "female" }
+                { title : "Masculino", default : userData?.gender === "male" , defaultValue : "male" },
+                { title : "Femenino", default : userData?.gender === "female", defaultValue : "female" }
               ]}
             />
             <SelectableOption
@@ -56,14 +55,19 @@ const Register : FC<TProps> = ({ currentStep , onNextScreen , step }) => {
               title="¿A quien vamos a asegurar?"
               inputRadioKey="person"
               options={[
-                { title : "Solo a mi" },
-                { title : "A mi y a mi familia" }
+                { title : "Solo a mi", defaultValue : "iam" },
+                { title : "A mi y a mi familia", defaultValue : "all" }
               ]}
             />
           </div>
         </div>
         <div className="register-step__buttons">
-          <Button type="submit" text="Continuar" ghost />
+          <Button type="submit" ghost>
+            <span>Continuar</span>
+            <span className="register-step__icon-button">
+              <AiOutlineRight />
+            </span>
+          </Button>
         </div>
       </form>
     </div>
